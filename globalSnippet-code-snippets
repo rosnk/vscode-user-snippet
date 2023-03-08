@@ -1,0 +1,223 @@
+{
+  "Console log": {
+    "prefix": "con",
+    "body": ["console.log($1);"],
+    "description": "console.log()"
+  },
+  "console log json": {
+    "prefix": "con_json",
+    "body": [
+      "console.log('${1:logmsg}', JSON.stringify(${2:object}, null, 2));"
+    ],
+    "description": "console log json"
+  },
+  "hp size": {
+    "prefix": "hp",
+    "body": ["hp(\"${1:example}\")"],
+    "description": "hp size"
+  },
+  "obj_name": {
+    "prefix": "obj_name",
+    "body": ["const ${1:name}= {", "  ${2:key}: ${3:value}", "}"],
+    "description": "obj_name"
+  },
+  "obj_empty": {
+    "prefix": "obj_empty",
+    "body": [" {", "  ${1:key}: ${2:value}", "}"],
+    "description": "obj_empty"
+  },
+  "React prop show": {
+    "prefix": "pre_props",
+    "body": [
+      "<pre>",
+      "  <code>{JSON.stringify(props, null, 4)}</code>",
+      "</pre>"
+    ],
+    "description": "Show React props list"
+  },
+  "express get router": {
+    "prefix": "roug",
+    "body": ["router.get(\"$1\", (req, res)=>{", "  $2", "});"],
+    "description": "express get router"
+  },
+  "express post router": {
+    "prefix": "roup",
+    "body": ["router.post(\"$1\", (req, res)=>{", "  $2", "});"],
+    "description": "express post router"
+  },
+  "express delete router": {
+    "prefix": "roud",
+    "body": ["router.delete(\"$1\", (req, res)=>{", "  $2", "});"],
+    "description": "express delete router"
+  },
+  "express get route": {
+    "prefix": "appg",
+    "body": ["app.get(\"$1\", (req, res)=>{", "  $2", "});"],
+    "description": "express get route"
+  },
+  "express post route": {
+    "prefix": "appp",
+    "body": ["app.post(\"$1\", (req, res)=>{", "  $2", "});"],
+    "description": "express post route"
+  },
+  "React component1": {
+    "react native component": {
+      "prefix": "reactnativecomp",
+      "body": [
+        "import React, {useState, useEffect, useReducer} from 'react'",
+        "import { StyleSheet, Text, View, TouchableOpacity, TextInput } from 'react-native'",
+        "",
+        "const reducer=(state, action)=> {",
+        "  switch (action.type) {",
+        "    case 'type_name1':",
+        "      return {count: state.count + 1};",
+        "    case 'type_name2':",
+        "      return {count: state.count - 1};",
+        "    default:",
+        "      throw new Error();",
+        "  }",
+        "}",
+        "",
+        "const  ${1:example} = () => {",
+        "  const initialState = {};",
+        "  const [state, dispatch] = useReducer(reducer, initialState);",
+        "",
+        "  const [name, setName]=useState('');",
+        "",
+        "  const handleBtnPress=()=>{",
+        "    dispatch({type: 'type_name1', payload:{}})",
+        "  }",
+        "",
+        "  const handleTextChange=(text)=>{",
+        "    setName(text)",
+        "  }",
+        "",
+        "  return (",
+        "    <>",
+        "    ",
+        "    <View  >",
+        "      <TextInput autoCapitalize=\"none\" autoCorrect={false} value={name} onChangeText={handleTextChange} />",
+        "      {name.length<3 ? <Text>name value is not valid</Text> : null}",
+        "    <TouchableOpacity onPress={handleBtnPress}>",
+        "      <Text>button</Text>",
+        "    </TouchableOpacity>",
+        "      ",
+        "    </View>",
+        "",
+        "    </>",
+        "  )",
+        "}",
+        "",
+        "export default ${1:example};",
+        "",
+        "const styles = StyleSheet.create({})",
+        ""
+      ],
+      "description": "react native component"
+    }
+  },
+  "reactnativestyles": {
+    "prefix": "sty",
+    "body": ["style={styles.${1:example}}"],
+    "description": "reactnativestyles"
+  },
+  "reactnativestylesproperty": {
+    "prefix": "stypro",
+    "body": ["${1:example}: {", "${2:example}", "  },"],
+    "description": "reactnativestylesproperty"
+  },
+  "arrow function": {
+    "prefix": "arrow_func",
+    "body": ["const ${1:example}= ()=>{", "    ${2:example}", "  }"],
+    "description": "arrow function"
+  },
+  "arrow function empty": {
+    "prefix": "arrow_func_empty",
+    "body": ["()=>{", "    ${1:example}", "  }"],
+    "description": "arrow function empty"
+  },
+  "custome react native functional component": {
+    "prefix": "crnfes",
+    "body": [
+      "import React from \"react\";",
+      "import {",
+      "  StyleSheet,",
+      "  Text,",
+      "  View,",
+      "  StatusBar,",
+      "  SafeAreaView,",
+      "  Platform,",
+      "} from \"react-native\";",
+      "",
+      "const ${1:example} = () => {",
+      "  return (",
+      "    <SafeAreaView style={styles.container}>",
+      "      <Text style={styles.text}>",
+      "        Open up App.js to start working on your app!",
+      "      </Text>",
+      "",
+      "      <StatusBar style=\"auto\" />",
+      "    </SafeAreaView>",
+      "  );",
+      "};",
+      "",
+      "export default ${1:example};",
+      "",
+      "const styles = StyleSheet.create({",
+      "  container: {",
+      "    flex: 1,",
+      "    backgroundColor: \"#ffffff\",",
+      "    paddingTop: Platform.OS === \"android\" ? StatusBar.currentHeight : 0,",
+      "  },",
+      "});",
+      ""
+    ],
+    "description": "custome react native functional component"
+  },
+  "trondebug": {
+    "prefix": "tron",
+    "body": [
+      "console.tron.display({",
+      "    name: \"${1:example}-debug\",",
+      "    important: true,",
+      "    preview: \"preview\",",
+      "    value:${2:example},",
+      "  });"
+    ],
+    "description": "trondebug"
+  },
+  "React component": {
+    "prefix": "compFunction",
+    "body": [
+      "import React from \"react\";",
+      "",
+      "const ${1:ComponentName} = () => {",
+      "  return (",
+      "    ${2:ComponentBody}",
+      " );",
+      "};",
+      "",
+      "export default ${1:ComponentName};"
+    ],
+    "description": "React component"
+  },
+  "nexusjs object type": {
+    "prefix": "object-type-nexusjs",
+    "body": [
+      "export const ${1:example} = objectType({",
+      "  name: '${1:example}',",
+      "  definition(t) {",
+      "    t.field('${2:example}', { type: PageInfo,",
+      "      resolve: (parent, args, context: Context, info) => {",
+      "        console.log('child-info val', info.variableValues);",
+      "        return context.prisma.${3:example}.findMany({",
+      "          where: { id: parent.id || undefined },",
+      "        });",
+      "      }, });",
+      "   ",
+      "  },",
+      "});"
+    ],
+    "description": "nexusjs object type"
+  }
+}
